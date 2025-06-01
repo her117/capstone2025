@@ -6,7 +6,7 @@
         </div>
     @endif
 
-    <div class="relative overflow-x-auto">
+    <div class="relative overflow-x-auto pl-6">
         <table>
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>

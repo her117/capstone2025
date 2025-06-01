@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('customer_id')->nullable();
-            $table->foreignId('user_id');
+            $table->integer('cost');
+            $table->integer('total');
+            $table->string('transaction_code', 20)->unique();
             $table->timestamps();
-
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('set null');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

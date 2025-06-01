@@ -1,9 +1,9 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
-    <form action="{{ route('customer.update',$produk->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('produks.update',$produk->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <div class="space-y-12">
+        <div class="space-y-12 pl-5 pr-2">
             <div class="border-b border-gray-900/10 mt-8">
             <h2 class="text-base/7 font-semibold text-gray-900">Add New Product</h2>
             <div class="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -61,7 +61,7 @@
             </div>
         <div class="mt-6 flex items-center justify-end gap-x-6">
             <button type="button" class="text-sm/6 font-semibold text-gray-900"><a href="{{ route('produks.index') }}" class="text-sm font-semibold text-gray-900">Cancel</a></button>
-            <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+            <button type="submit" onclick="editAlert()" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
         </div>
     </form>
 

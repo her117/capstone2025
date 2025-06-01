@@ -7,14 +7,16 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Transaksi extends Model
 {
-    protected $fillable = ['customer_id','user_id'];
+    protected $table = 'transaksi';
+    protected $fillable = ['transaction_code','customer_id','total','cost'];
 
-    public function products(): HasMany
+    // Relasi ke item transaksi (bukan product langsung!)
+    public function item_transaksi(): HasMany
     {
-        return $this->hasMany(product::class);
+        return $this->hasMany(ItemTransaksi::class, 'order_id');
     }
-
-    // public function item_tranasksi(): HasMany{
-    //     return $this -> hasMany(item_tranasksi::class);
-    // }
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'customer_id');
+    }
 }

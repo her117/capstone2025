@@ -42,6 +42,16 @@
         </div>
     </nav>
 
+     <!-- Mobile menu -->
+    <div class="hidden sm:hidden bg-gray-900" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="{{ route('stock.create') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">Stok Masuk</a>
+        <a href="{{ route('stock.out') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Stok Keluar</a>
+        <a href="{{ route('stock.opname') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Stok Opname</a>
+        </div>
+    </div>
+    </nav>
+
     </div>
     <div class="max-w-xl mx-auto px-4 py-6">
         <h1 class="text-2xl font-bold mb-4">Tambah Stok Opname</h1>
@@ -89,7 +99,7 @@
                 <input type="text" name="notes" id="notes" class="w-full border px-3 py-2 rounded">
             </div>
 
-            <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+            <button type="submit" onclick="saveAlert()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
                 Simpan
             </button>
         </form>
@@ -141,6 +151,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.querySelector('button[aria-controls="mobile-menu"]');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        // Toggle aria-expanded attribute
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', !expanded);
+        });
+    }
+    });
 </script>
 
 

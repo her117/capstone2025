@@ -3,7 +3,7 @@
     <form action="{{ route('category.update', $category->id) }}" method="POST">
         @csrf
         @method('PUT')
-        <div class="space-y-12">
+        <div class="space-y-12 pl-5 pr-2">
             <div class="border-b border-gray-900/10 pb-12">
             <h2 class="text-base/7 font-semibold text-gray-900">Edit Category</h2>
 
@@ -17,7 +17,7 @@
             </div>
         <div class="mt-6 flex items-center justify-end gap-x-6">
             <button type="button" onclick="history.back()" class="btn-kembali">Cancel</button>
-            <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+            <button type="submit" onclick="saveAlert()" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
         </div>
     </form>
 
