@@ -19,7 +19,7 @@ class CartController extends Controller
 
         $cart = session()->get('cart', []);
 
-        if (isset($cart[$productId])) {
+        if (isset($cart[$productId])) { 
             $cart[$productId]['quantity']++;
             $price = $product->sell_price; // definisikan dulu
             $cart[$productId]['total'] = $cart[$productId]['quantity'] * $price;

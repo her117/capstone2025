@@ -5,8 +5,8 @@
         <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
         </svg>
         </button>
-        <aside id="sidebar-multi-level-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-        <div class="h-full px-3 py-4 overflow-y-auto bg-[#2f3542] dark:bg-gray-800">
+        <aside id="sidebar-multi-level-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-[#2f3542] dark:bg-gray-800 flex flex-col justify-between">
+        <div class="flex-1 overflow-y-auto px-3 py-4">
             <ul class="space-y-2 font-medium">
                 <li>
                     <a href="{{ route('report.chart') }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
@@ -71,5 +71,10 @@
                 </li>
             </ul>
         </div>
+            <footer class="bg-gray-800 text-white text-sm px-4 py-4 sticky">
+                <div>
+                    <p class="text-gray-400">© 2025 Capstone Kelompok 2</p>
+                </div>
+            </footer>
         </aside>
     </div>
